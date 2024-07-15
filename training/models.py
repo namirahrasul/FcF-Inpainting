@@ -714,7 +714,7 @@ class MinibatchStdLayer(torch.nn.Module):
         F = self.num_channels
         c = C // F
 
-        y = x.reshape(G, -1, F, c, H, W)    # [GnFcHW] Split minibatch N into n groups of size G, and channels C into F groups of size c.
+        y = x.reshape(G, N // G, F, c, H, W)    # [GnFcHW] Split minibatch N into n groups of size G, and channels C into F groups of size c. was -1
         y = y - y.mean(dim=0)               # [GnFcHW] Subtract mean over group.
         y = y.square().mean(dim=0)          # [nFcHW]  Calc variance over group.
         y = (y + 1e-8).sqrt()               # [nFcHW]  Calc stddev over group.
