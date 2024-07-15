@@ -1,5 +1,4 @@
-import sys
-sys.path.append('/opt/conda/envs/fcfgan/lib/python3.7/site-packages')
+
 import numpy as np
 from numpy.lib.type_check import imag
 import torch
