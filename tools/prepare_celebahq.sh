@@ -13,8 +13,8 @@ done
 echo "Preparing Splits..."
 # Split: split train -> train & val
 cat tools/train_shuffled.flist | shuf > datasets/celeba-hq-dataset/temp_train_shuffled.flist
-cat datasets/celeba-hq-dataset/temp_train_shuffled.flist | head -n 2000 > datasets/celeba-hq-dataset/val_shuffled.flist
-cat datasets/celeba-hq-dataset/temp_train_shuffled.flist | tail -n +2001 > datasets/celeba-hq-dataset/train_shuffled.flist
+cat datasets/celeba-hq-dataset/temp_train_shuffled.flist | head -n 10 > datasets/celeba-hq-dataset/val_shuffled.flist
+cat datasets/celeba-hq-dataset/temp_train_shuffled.flist | tail -n +11 > datasets/celeba-hq-dataset/train_shuffled.flist
 cat tools/val_shuffled.flist > datasets/celeba-hq-dataset/visual_test_shuffled.flist
 
 mkdir datasets/celeba-hq-dataset/train_256/
