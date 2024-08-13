@@ -38,7 +38,7 @@ with open('datasets/celeba-hq-dataset/train_shuffled.flist', 'w') as f:
 with open('tools/val_shuffled.flist', 'r') as f:
     val_files = f.readlines()
 with open('datasets/celeba-hq-dataset/visual_test_shuffled.flist', 'w') as f:
-    f.writelines(val_files)
+    f.writelines(val_files[:5])
 
     
 def move_files(flist_path, dest_dir):
