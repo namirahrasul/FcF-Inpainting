@@ -1,6 +1,6 @@
 mkdir -p datasets/celeba-hq-dataset
 
-unzip data256x256.zip -d datasets/celeba-hq-dataset/
+unzip datasets/data256x256.zip -d datasets/celeba-hq-dataset/
 
 echo "Preparing Files..."
 # Reindex
