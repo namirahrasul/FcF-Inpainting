@@ -6,9 +6,9 @@ unzip datasets/data256x256.zip -d datasets/celeba-hq-dataset/
 echo "Preparing Files..."
 # Reindex
 
-for i in `echo {00001..00029}`
+for i in `echo {00000..00029}`
 do
-    mv 'datasets/celeba-hq-dataset/data256x256/'$i'.jpg' 'datasets/celeba-hq-dataset/data256x256/'$[10#$i - 1]'.jpg'
+    mv 'datasets/celeba-hq-dataset/data256x256/'$i'.jpg' 'datasets/celeba-hq-dataset/data256x256/'$[10#$i]'.jpg'
 done
 
 echo "Preparing Splits..."
