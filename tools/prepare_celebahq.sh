@@ -8,12 +8,7 @@ echo "Preparing Files..."
 
 for i in `echo {00001..00029}`
 do
-    mv 'datasets/celeba-hq-dataset/data256x256/'$i'.jpg' 'datasets/temp/'$i'.jpg'
-done
-
-for i in `echo {00001..00029}`
-do
-    mv 'datasets/temp/'$i'.jpg' 'datasets/celeba-hq-dataset/data256x256/'$[10#$i - 1]'.jpg'
+    mv 'datasets/celeba-hq-dataset/data256x256/'$i'.jpg' 'datasets/celeba-hq-dataset/data256x256/'$[10#$i - 1]'.jpg'
 done
 
 echo "Preparing Splits..."
