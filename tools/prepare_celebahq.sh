@@ -1,14 +1,20 @@
 mkdir -p datasets/celeba-hq-dataset
+mkdir -p datasets/temp
 
 unzip datasets/data256x256.zip -d datasets/celeba-hq-dataset/
 
 echo "Preparing Files..."
 # Reindex
+
 for i in `echo {00001..00030}`
 do
-    mv 'datasets/celeba-hq-dataset/data256x256/'$i'.jpg' 'datasets/celeba-hq-dataset/data256x256/'$[10#$i - 1]'.jpg'
+    mv 'datasets/celeba-hq-dataset/data256x256/'$i'.jpg' 'datasets/temp/'$i'.jpg'
 done
 
+for i in `echo {00001..00030}`
+do
+    mv 'datasets/temp/'$i'.jpg' 'datasets/celeba-hq-dataset/data256x256/'$[10#$i - 1]'.jpg'
+done
 
 echo "Preparing Splits..."
 # Split: split train -> train & val
